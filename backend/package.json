@@ -1,0 +1,22 @@
+{
+  "name": "tickuy-backend",
+  "version": "1.0.0",
+  "description": "TICKUY Backend - Microservices Architecture",
+  "scripts": {
+    "install:all": "npm install && cd auth-service && npm install && cd ../event-service && npm install && cd ../order-service && npm install",
+    "dev": "concurrently \"npm run dev:auth\" \"npm run dev:event\" \"npm run dev:order\"",
+    "start": "concurrently \"npm run start:auth\" \"npm run start:event\" \"npm run start:order\"",
+    "dev:auth": "cd auth-service && npm run dev",
+    "dev:event": "cd event-service && npm run dev",
+    "dev:order": "cd order-service && npm run dev",
+    "start:auth": "cd auth-service && npm start",
+    "start:event": "cd event-service && npm start",
+    "start:order": "cd order-service && npm start"
+  },
+  "keywords": ["ticketing", "microservices", "backend"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
